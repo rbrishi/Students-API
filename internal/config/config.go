@@ -22,7 +22,7 @@ type HTTPServer struct{
 
 
 
-func MustLoad *Config{
+func MustLoad() *Config {
 	var configPath string
 	configPath = os.Getenv("CONFIG_PATH")
 	if configPath == ""{
@@ -43,5 +43,4 @@ func MustLoad *Config{
 		log.Fatalf("cannot read config: %s", err.Error())
 	}
 	return &cfg
-	
 }
